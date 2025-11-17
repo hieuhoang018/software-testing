@@ -1,0 +1,43 @@
+# Minimal .gitignore for a JavaScript project (software testing, GitHub Actions, Coveralls)
+
+# Node
+node_modules/
+.pnp/
+.pnp.js
+.cache/
+
+# Build / distribution / coverage
+dist/
+build/
+coverage/
+lcov.info
+.nyc_output/
+
+# Logs & temp
+npm-debug.log*
+yarn-error.log*
+*.log
+*.tmp
+*.temp
+*.swp
+*.bak
+
+# Secrets / env
+.env
+.env.*.local
+secrets.*
+*.pem
+*.key
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# CI / artifacts
+artifacts/
+reports/
+
+# Keep .github/workflows/ tracked for GitHub Actions and Coveralls config
+.internal/
