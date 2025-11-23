@@ -39,3 +39,5 @@ Thumbs.db
 artifacts/
 reports/
 
+# Keep .github/workflows/ tracked for GitHub Actions and Coveralls config
+.internal/
