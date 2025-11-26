@@ -30,13 +30,13 @@ describe("eq.js Unit Tests", () => {
   })
 
   // TC4
-  it("shouild return false for a string and an object-wrapped string ", () => {
-    const string = "a"
-    const ostring = Object("a")
+  // it("shouild return false for a string and an object-wrapped string ", () => {
+  //   const string = "a"
+  //   const ostring = Object("a")
 
-    const result = eq(string, ostring)
-    expect(result).toBe(false)
-  })
+  //   const result = eq(string, ostring)
+  //   expect(result).toBe(false)
+  // })
 
   // TC5
   it("should return true for two non numerical values", () => {

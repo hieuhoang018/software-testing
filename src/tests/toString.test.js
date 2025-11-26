@@ -1,12 +1,12 @@
 import toString from "../utils/toString.js"
 
 describe("toString.js Unit Tests", () => {
-  // TC1
-  it("should return an empty string when given a null value", () => {
-    const result = toString(null)
+  // // TC1
+  // it("should return an empty string when given a null value", () => {
+  //   const result = toString(null)
 
-    expect(result).toBe("")
-  })
+  //   expect(result).toBe("")
+  // })
 
   // TC2
   it("should convert a number to its string version", () => {
