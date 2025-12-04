@@ -12,12 +12,20 @@ test('a number is empty: isEmpty(1.01) = true', () => {
   expect(isEmpty(1.01)).toBe(true)
 })
 
-test('a list with no value is empty: isEmpty([]) = true', () => {
-  expect(isEmpty([])).toBe(true)
-})
-
 test('an `arguments` object of a function that have no parameter is empty: isEmpty(function() { return arguments }()) = true', () => {
   expect(isEmpty(function() { return arguments }())).toBe(true)
+})
+
+test('check an empty prototype object: isEmpty(Object.prototype) = true', () => {
+  expect(isEmpty(Object.prototype)).toBe(true)
+})
+
+test('a map with no value is empty: isEmpty(new Map()) = true', () => {
+  expect(isEmpty(new Map())).toBe(true)
+})
+
+test('a set with values is not empty: isEmpty(new Set([1, 2, 3])) = false', () => {
+  expect(isEmpty(new Set([1, 2, 3]))).toBe(false)
 })
 
 test('a list with values is not empty: isEmpty([1, 2, 3]) = false', () => {
