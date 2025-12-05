@@ -56,4 +56,19 @@ describe("capitalize.js Unit Tests", () => {
 
     expect(result).toBe(" test")
   })
+
+  // TC9
+  it("should handle a single unicode emoji correctly", () => {
+    const result = capitalize("😀")
+    expect(result).toBe("😀")
+  })
+
+  // TC10
+  it("should handle strings starting with emoji and lowercase the rest", () => {
+    const result1 = capitalize("😀hello")
+    const result2 = capitalize("😀HELLO")
+
+    expect(result1).toBe("😀hello")
+    expect(result2).toBe("😀hello")
+  })
 })
