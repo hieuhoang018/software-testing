@@ -13,19 +13,19 @@ describe("filter.js Unit Tests", () => {
     expect(result).toEqual([{ user: "barney", active: true }])
   })
 
-  // // TC2
-  // it("should return empty array when given array is empty", () => {
-  //   const array = []
+  // TC2
+  it("should return empty array when given array is empty", () => {
+    const array = []
 
-  //   const result = filter(array, ({ active }) => active)
-  //   expect(result).toEqual([])
-  // })
+    const result = filter(array, ({ active }) => active)
+    expect(result).toEqual([])
+  })
   
-  // // TC3
-  // it("should return empty array when given array is null", () => {
-  //   const array = null
+  // TC3
+  it("should return empty array when given array is null", () => {
+    const array = null
 
-  //   const result = filter(array, ({ active }) => active)
-  //   expect(result).toEqual([])
-  // })
+    const result = filter(array, ({ active }) => active)
+    expect(result).toEqual([])
+  })
 })
