@@ -1,16 +1,44 @@
-# Student template
+# Software Testing Assignment
 
-## Purpose of this repository
+This repository contains the unit tests, CI configuration, and coverage reporting setup implemented for a util function library. The project executes unit tests for the selected utility functions and integrates automated testing through GitHub Actions and Coveralls.
 
-This is a project template for students participating in Software Testing course
-at Tampere University.
+## Running Tests Locally
 
-The repository only contains the source code that is under testing, `package.json` skeleton
-and LICENSE file.
+### Install dependencies
 
-Source code folder contains a separate license file that must **NOT** be removed under any circumstances!
-Removing this license file directly violates terms and conditions of the software under testing.
-Individuals who remove or modify the license file will also carry the consequences.
+```
+npm install
+```
+
+### Run the test suite
+
+```
+npm test
+```
+
+### Run tests with coverage
+
+```
+npm run test:coverage
+```
+
+A coverage summary will appear in the terminal, and detailed reports will be generated under the `coverage/` directory.
+
+## ⚙️ Continuous Integration
+
+GitHub Actions is configured to:
+
+1. Install dependencies
+2. Run all unit tests
+3. Generate coverage
+4. Upload the LCOV report to Coveralls
+
+The workflow triggers on pushes to `main` and pull requests targeting `main`.
+
+## 📊 Coverage Reporting
+
+Coverage results are uploaded automatically to [**Coveralls**](https://coveralls.io/github/hieuhoang018/software-testing?branch=main).
 
 # Coveralls Coverage Status
+
 [![Coverage Status](https://coveralls.io/repos/github/hieuhoang018/software-testing/badge.svg?branch=main)](https://coveralls.io/github/hieuhoang018/software-testing?branch=main)
