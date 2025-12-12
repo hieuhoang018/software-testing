@@ -1,21 +1,38 @@
-import ceil from '../utils/ceil'
+import ceil from '../utils/ceil.js'
 
-test('round up number with default precision (precision=0): ceil(4.006) = 5', () => {
-  expect(ceil(4.006)).toBe(5)
-})
+describe("ceil.js Unit Tests", () => {
+  // TC1
+  it("should round up number with default precision", () => {
+    const result = ceil(4.006)
 
-test('round up number with a positive precision: ceil(6.004, 2) = 6.01', () => {
-  expect(ceil(6.004, 2)).toBe(6.01)
-})
+    expect(result).toBe(5)
+  })
 
-test('round up number with a negative precision: ceil(6040, -2) = 6100', () => {
-  expect(ceil(6040, -2)).toBe(6100)
-})
+  // TC2
+  it("should round up number with a positive precision", () => {
+    const result = ceil(6.004, 2)
 
-test('invalid string as the number to be rounded up: ceil("abc", 2) = NaN', () => {
-  expect(ceil("abc", 2)).toBe(NaN)
-})
+    expect(result).toBe(6.01)
+  })
 
-test('invalid string as the precision: ceil(1234, "xyz") = NaN', () => {
-  expect(ceil(1234, "xyz")).toBe(NaN)
+  // TC3
+  it("should round up number with a negative precision", () => {
+    const result = ceil(6040, -2)
+
+    expect(result).toBe(6100)
+  })
+
+  // TC4
+  it("should return NaN for invalid string as number", () => {
+    const result = ceil("abc", 2)
+
+    expect(result).toBe(NaN)
+  })
+
+  // TC5
+  it("should return NaN for invalid string as precision", () => {
+    const result = ceil(1234, "xyz")
+
+    expect(result).toBe(NaN)
+  })
 })

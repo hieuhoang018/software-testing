@@ -1,41 +1,73 @@
-import isEmpty from '../utils/isEmpty'
+import isEmpty from '../utils/isEmpty.js'
 
-test('null is empty: isEmpty(null) = true', () => {
-  expect(isEmpty(null)).toBe(true)
-})
+describe("isEmpty.js Unit Tests", () => {
+  // TC1
+  it("should return true for null", () => {
+    const result = isEmpty(null)
 
-test('boolean object is empty: isEmpty(true) = true', () => {
-  expect(isEmpty(true)).toBe(true)
-})
+    expect(result).toBe(true)
+  })
 
-test('a number is empty: isEmpty(1.01) = true', () => {
-  expect(isEmpty(1.01)).toBe(true)
-})
+  // TC2
+  it("should return true for a boolean", () => {
+    const result = isEmpty(true)
 
-test('an `arguments` object of a function that have no parameter is empty: isEmpty(function() { return arguments }()) = true', () => {
-  expect(isEmpty(function() { return arguments }())).toBe(true)
-})
+    expect(result).toBe(true)
+  })
 
-test('check an empty prototype object: isEmpty(Object.prototype) = true', () => {
-  expect(isEmpty(Object.prototype)).toBe(true)
-})
+  // TC3
+  it("should return true for a number", () => {
+    const result = isEmpty(1.01)
 
-test('a map with no value is empty: isEmpty(new Map()) = true', () => {
-  expect(isEmpty(new Map())).toBe(true)
-})
+    expect(result).toBe(true)
+  })
 
-test('a set with values is not empty: isEmpty(new Set([1, 2, 3])) = false', () => {
-  expect(isEmpty(new Set([1, 2, 3]))).toBe(false)
-})
+  // TC4
+  it("should return true for an empty arguments object", () => {
+    const result = isEmpty(function() { return arguments }())
 
-test('a list with values is not empty: isEmpty([1, 2, 3]) = false', () => {
-  expect(isEmpty([1, 2, 3])).toBe(false)
-})
+    expect(result).toBe(true)
+  })
 
-test('a string is not empty: isEmpty("abc") = false', () => {
-  expect(isEmpty("abc")).toBe(false)
-})
+  // TC5
+  it("should return true for Object.prototype", () => {
+    const result = isEmpty(Object.prototype)
 
-test('an object with values is not empty: isEmpty({ "a": 1 }) = false', () => {
-  expect(isEmpty({ "a": 1 })).toBe(false)
+    expect(result).toBe(true)
+  })
+
+  // TC6
+  it("should return true for an empty Map", () => {
+    const result = isEmpty(new Map())
+
+    expect(result).toBe(true)
+  })
+
+  // TC7
+  it("should return false for a non-empty Set", () => {
+    const result = isEmpty(new Set([1, 2, 3]))
+
+    expect(result).toBe(false)
+  })
+
+  // TC8
+  it("should return false for a non-empty array", () => {
+    const result = isEmpty([1, 2, 3])
+
+    expect(result).toBe(false)
+  })
+
+  // TC9
+  it("should return false for a non-empty string", () => {
+    const result = isEmpty("abc")
+
+    expect(result).toBe(false)
+  })
+
+  // TC10
+  it("should return false for a non-empty object", () => {
+    const result = isEmpty({ "a": 1 })
+
+    expect(result).toBe(false)
+  })
 })

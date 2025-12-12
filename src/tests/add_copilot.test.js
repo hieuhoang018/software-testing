@@ -1,33 +1,59 @@
-import add from '../utils/add'
+import add from '../utils/add.js'
 
-test('large numbers: add(1000000, 2000000) = 3000000', () => {
-  expect(add(1000000, 2000000)).toBe(3000000)
-})
+describe("add_copilot.js Unit Tests", () => {
+  // TC1
+  it("should add large numbers", () => {
+    const result = add(1000000, 2000000)
 
-test('both negative numbers: add(-5, -3) = -8', () => {
-  expect(add(-5, -3)).toBe(-8)
-})
+    expect(result).toBe(3000000)
+  })
 
-test('negative and zero: add(-10, 0) = -10', () => {
-  expect(add(-10, 0)).toBe(-10)
-})
+  // TC2
+  it("should add both negative numbers", () => {
+    const result = add(-5, -3)
 
-test('small decimals: add(0.1, 0.2) ≈ 0.3', () => {
-  expect(add(0.1, 0.2)).toBeCloseTo(0.3)
-})
+    expect(result).toBe(-8)
+  })
 
-test('false becomes 0: add(false, 5) = 5', () => {
-  expect(add(false, 5)).toBe(5)
-})
+  // TC3
+  it("should add negative and zero", () => {
+    const result = add(-10, 0)
 
-test('negative infinity: add(-Infinity, 1) = -Infinity', () => {
-  expect(add(-Infinity, 1)).toBe(-Infinity)
-})
+    expect(result).toBe(-10)
+  })
 
-test('chained operations: add(add(1, 2), 3) = 6', () => {
-  expect(add(add(1, 2), 3)).toBe(6)
-})
+  // TC4
+  it("should add small decimals approximately", () => {
+    const result = add(0.1, 0.2)
 
-test('very large decimal: add(999.999, 0.001) = 1000', () => {
-  expect(add(999.999, 0.001)).toBeCloseTo(1000)
+    expect(result).toBeCloseTo(0.3)
+  })
+
+  // TC5
+  it("should treat false as 0", () => {
+    const result = add(false, 5)
+
+    expect(result).toBe(5)
+  })
+
+  // TC6
+  it("should add negative infinity", () => {
+    const result = add(-Infinity, 1)
+
+    expect(result).toBe(-Infinity)
+  })
+
+  // TC7
+  it("should handle chained operations", () => {
+    const result = add(add(1, 2), 3)
+
+    expect(result).toBe(6)
+  })
+
+  // TC8
+  it("should add very large decimals approximately", () => {
+    const result = add(999.999, 0.001)
+
+    expect(result).toBeCloseTo(1000)
+  })
 })

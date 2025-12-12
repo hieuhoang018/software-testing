@@ -1,13 +1,24 @@
-import isArguments from '../utils/isArguments'
+import isArguments from '../utils/isArguments.js'
 
-test('checking an `arguments` object: isArguments(function() { return arguments }()) = true', () => {
-  expect(isArguments(function() { return arguments }())).toBe(true)
-})
+describe("isArguments.js Unit Tests", () => {
+  // TC1
+  it("should return true for an arguments object", () => {
+    const result = isArguments(function() { return arguments }())
 
-test('a list is not an `arguments` object: isArguments([1, 2, 3]) = false', () => {
-  expect(isArguments([1, 2, 3])).toBe(false)
-})
+    expect(result).toBe(true)
+  })
 
-test('the value of the parameter is not an `arguments` object: isArguments(function(a, b) { return arguments[0] }("a", 2)) = false', () => {
-  expect(isArguments(function(a, b) { return arguments[0] }("a", 2))).toBe(false)
+  // TC2
+  it("should return false for an array", () => {
+    const result = isArguments([1, 2, 3])
+
+    expect(result).toBe(false)
+  })
+
+  // TC3
+  it("should return false for a parameter value", () => {
+    const result = isArguments(function(a, b) { return arguments[0] }("a", 2))
+
+    expect(result).toBe(false)
+  })
 })
